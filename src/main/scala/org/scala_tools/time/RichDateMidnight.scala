@@ -18,17 +18,17 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichDateMidnight(dm: DateMidnight) {
+class RichDateMidnight(underlying: DateMidnight) {
   def -(duration: Long): DateMidnight =
-    dm.minus(duration)
+    underlying.minus(duration)
   def -(duration: ReadableDuration): DateMidnight =
-    dm.minus(duration)
+    underlying.minus(duration)
   def -(period: ReadablePeriod): DateMidnight =
-    dm.minus(period)
+    underlying.minus(period)
   def +(duration: Long): DateMidnight =
-    dm.plus(duration)
+    underlying.plus(duration)
   def +(duration: ReadableDuration): DateMidnight =
-    dm.plus(duration)
+    underlying.plus(duration)
   def +(period: ReadablePeriod): DateMidnight =
-    dm.plus(period)
+    underlying.plus(period)
 }

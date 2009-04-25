@@ -18,9 +18,9 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichChronology(ch: Chronology) {
+class RichChronology(underlying: Chronology) {
   def zone: Option[DateTimeZone] =
-    nullCheck(ch.getZone)
+    nullCheck(underlying.getZone)
   private def nullCheck[T <: AnyRef](x: T): Option[T] =
     if (x == null) None else Some(x)
 }

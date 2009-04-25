@@ -18,27 +18,17 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichDateTime(dt: DateTime) {
+class RichDateTime(underlying: DateTime) {
   def -(duration: Long): DateTime =
-    dt.minus(duration)
+    underlying.minus(duration)
   def -(duration: ReadableDuration): DateTime =
-    dt.minus(duration)
+    underlying.minus(duration)
   def -(period: ReadablePeriod): DateTime =
-    dt.minus(period)
+    underlying.minus(period)
   def +(duration: Long): DateTime =
-    dt.plus(duration)
+    underlying.plus(duration)
   def +(duration: ReadableDuration): DateTime =
-    dt.plus(duration)
+    underlying.plus(duration)
   def +(period: ReadablePeriod): DateTime =
-    dt.plus(period)
-  
-  def millis  = dt.millisOfSecond
-  def second  = dt.secondOfMinute
-  def minute  = dt.minuteOfHour
-  def hour    = dt.hourOfDay
-  def day     = dt.dayOfMonth
-  def week    = dt.weekOfWeekyear
-  def month   = dt.monthOfYear
-  def year    = dt.year
-  def century = dt.centuryOfEra
+    underlying.plus(period)
 }

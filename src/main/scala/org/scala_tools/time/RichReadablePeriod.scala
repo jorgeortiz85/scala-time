@@ -18,7 +18,7 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichReadablePeriod(pd: ReadablePeriod) {
+class RichReadablePeriod(underlying: ReadablePeriod) {
   def periodType: PeriodType =
-    pd.getPeriodType
+    underlying.getPeriodType
 }

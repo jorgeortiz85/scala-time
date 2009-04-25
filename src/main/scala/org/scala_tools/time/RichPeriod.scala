@@ -18,29 +18,29 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichPeriod(pd: Period) {
+class RichPeriod(underlying: Period) {
   def days: Int =
-    pd.getDays
+    underlying.getDays
   def hours: Int =
-    pd.getHours
+    underlying.getHours
   def millis: Int =
-    pd.getMillis
+    underlying.getMillis
   def minutes: Int =
-    pd.getMinutes
+    underlying.getMinutes
   def months: Int =
-    pd.getMonths
+    underlying.getMonths
   def seconds: Int =
-    pd.getSeconds
+    underlying.getSeconds
   def weeks: Int =
-    pd.getWeeks
+    underlying.getWeeks
   def years: Int =
-    pd.getYears
+    underlying.getYears
   def -(period: ReadablePeriod): Period =
-    pd.minus(period)
+    underlying.minus(period)
   def +(period: ReadablePeriod): Period =
-    pd.plus(period)
+    underlying.plus(period)
   def ago: DateTime =
-    Instants.now.minus(pd)
+    Instants.now.minus(underlying)
   def from(dt: DateTime): DateTime =
-    dt.plus(pd)
+    dt.plus(underlying)
 }

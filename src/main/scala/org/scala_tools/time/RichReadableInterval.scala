@@ -18,13 +18,13 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichReadableInterval(iv: ReadableInterval) {
+class RichReadableInterval(underlying: ReadableInterval) {
   def chronology: Chronology =
-    iv.getChronology
+    underlying.getChronology
   def end: DateTime =
-    iv.getEnd
+    underlying.getEnd
   def start: DateTime =
-    iv.getStart
+    underlying.getStart
 
   // TODO: Should > and > be added as aliases for isAfter and isBefore?
   //   could be convenient, or just confusing because this isn't Ordered.

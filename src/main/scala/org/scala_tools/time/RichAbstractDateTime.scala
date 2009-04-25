@@ -16,18 +16,13 @@
  **/
 package org.scala_tools.time
 
+import java.util.{Locale, Calendar, GregorianCalendar}
 import org.joda.time._
+import org.joda.time.base.AbstractDateTime
 
-class RichReadableInstant[T <: ReadableInstant](underlying: T) extends Ordered[T] {
-  def chronology: Chronology =
-    underlying.getChronology
-  def millis: Long =
-    underlying.getMillis
-  def zone: DateTimeZone =
-    underlying.getZone
-  override def compare(that: T): Int =
-    underlying.compareTo(that)
-  
-  def instant: Instant =
-    underlying.toInstant
+class RichAbstractDateTime(underlying: AbstractDateTime) {
+  def calendar(locale: Locale): Calendar =
+    underlying.toCalendar(locale)
+  def gregorianCalendar: Calendar =
+    underlying.toGregorianCalendar
 }

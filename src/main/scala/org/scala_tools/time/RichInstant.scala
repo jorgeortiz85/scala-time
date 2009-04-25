@@ -18,13 +18,13 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichInstant(instant: Instant) {
+class RichInstant(underlying: Instant) {
   def -(duration: Long): Instant =
-    instant.minus(duration)
+    underlying.minus(duration)
   def -(duration: ReadableDuration): Instant =
-    instant.minus(duration)
+    underlying.minus(duration)
   def +(duration: Long): Instant =
-    instant.plus(duration)
+    underlying.plus(duration)
   def +(duration: ReadableDuration): Instant =
-    instant.plus(duration)
+    underlying.plus(duration)
 }

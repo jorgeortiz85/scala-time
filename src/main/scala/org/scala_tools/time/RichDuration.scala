@@ -18,15 +18,15 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichDuration(dur: Duration) {
+class RichDuration(underlying: Duration) {
   def seconds: Long =
-    dur.getStandardSeconds
+    underlying.getStandardSeconds
   def -(amount: Long): Duration =
-    dur.minus(amount)
+    underlying.minus(amount)
   def -(amount: ReadableDuration): Duration =
-    dur.minus(amount)
+    underlying.minus(amount)
   def +(amount: Long): Duration =
-    dur.plus(amount)
+    underlying.plus(amount)
   def +(amount: ReadableDuration): Duration =
-    dur.plus(amount)
+    underlying.plus(amount)
 }

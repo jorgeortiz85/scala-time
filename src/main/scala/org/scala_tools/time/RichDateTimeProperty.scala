@@ -18,7 +18,7 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichDateTimeProperty(pty: DateTime.Property) {
+class RichDateTimeProperty(underlying: DateTime.Property) {
   def dateTime: DateTime =
-    pty.getDateTime
+    underlying.getDateTime
 }

@@ -20,56 +20,56 @@ import java.util.Locale
 import org.joda.time._
 import org.joda.time.field.AbstractReadableInstantFieldProperty
 
-class RichAbstractReadableInstantFieldProperty(pty: AbstractReadableInstantFieldProperty) {
+class RichAbstractReadableInstantFieldProperty(underlying: AbstractReadableInstantFieldProperty) {
   def shortText: String =
-    pty.getAsShortText
+    underlying.getAsShortText
   def asShortText: String =
-    pty.getAsShortText
+    underlying.getAsShortText
   def shortText(locale: Locale): String =
-    pty.getAsShortText(locale)
+    underlying.getAsShortText(locale)
   def asShortText(locale: Locale): String =
-    pty.getAsShortText(locale)
+    underlying.getAsShortText(locale)
   def asString: String =
-    pty.getAsString
+    underlying.getAsString
   def text: String =
-    pty.getAsText
+    underlying.getAsText
   def asText: String =
-    pty.getAsText
+    underlying.getAsText
   def text(locale: Locale): String =
-    pty.getAsText(locale)
+    underlying.getAsText(locale)
   def asText(locale: Locale): String =
-    pty.getAsText(locale)
+    underlying.getAsText(locale)
   def durationField: DurationField =
-    pty.getDurationField
+    underlying.getDurationField
   def field: DateTimeField =
-    pty.getField
+    underlying.getField
   def fieldType: DateTimeFieldType =
-    pty.getFieldType
+    underlying.getFieldType
   def leapAmount: Int =
-    pty.getLeapAmount
+    underlying.getLeapAmount
   def leapDurationField: DurationField =
-    pty.getLeapDurationField
+    underlying.getLeapDurationField
   def maximumValue: Int =
-    pty.getMaximumValue
+    underlying.getMaximumValue
   def maxValue: Int =
-    pty.getMaximumValue
+    underlying.getMaximumValue
   def maximumValueOverall: Int =
-    pty.getMaximumValueOverall
+    underlying.getMaximumValueOverall
   def maxValueOverall: Int =
-    pty.getMaximumValueOverall
+    underlying.getMaximumValueOverall
   def minimumValue: Int =
-    pty.getMinimumValue
+    underlying.getMinimumValue
   def minValue: Int =
-    pty.getMinimumValue
+    underlying.getMinimumValue
   def minimumValueOverall: Int =
-    pty.getMinimumValueOverall
+    underlying.getMinimumValueOverall
   def minValueOverall: Int =
-    pty.getMinimumValueOverall
+    underlying.getMinimumValueOverall
   def name: String =
-    pty.getName
+    underlying.getName
   def rangeDurationField: DurationField =
-    pty.getRangeDurationField
+    underlying.getRangeDurationField
 
   def interval: Interval =
-    pty.toInterval
+    underlying.toInterval
 }
