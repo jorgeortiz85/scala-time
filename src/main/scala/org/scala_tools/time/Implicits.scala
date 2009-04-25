@@ -41,6 +41,7 @@ trait JodaImplicits {
   implicit def richDuration(dur: Duration) = new RichDuration(dur)
   implicit def richInstant(in: Instant) = new RichInstant(in)
   implicit def richPeriod(per: Period) = new RichPeriod(per)
+  implicit def richReadableDateTime(dt: ReadableDateTime) = new RichReadableDateTime(dt)
   implicit def richReadableDuration(dur: ReadableDuration) = new RichReadableDuration(dur)
   implicit def richReadableInstant(in: ReadableInstant) = new RichReadableInstant(in)
   implicit def richReadableInterval(in: ReadableInterval) = new RichReadableInterval(in)

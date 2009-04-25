@@ -21,7 +21,7 @@ import org.joda.time._
 
 object Intervals extends Intervals
 
-trait Intervals {  
+trait Intervals {
   def thisSecond = Instants.now.second.interval
   def thisMinute = Instants.now.minute.interval
   def thisHour   = Instants.now.hour.interval
