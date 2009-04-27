@@ -18,18 +18,17 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichReadableInterval(underlying: ReadableInterval) {
-  def chronology: Chronology =
-    underlying.getChronology
-  def end: DateTime =
-    underlying.getEnd
-  def start: DateTime =
-    underlying.getStart
+object StaticPeriod extends StaticPeriod
 
-  def duration: Duration =
-    underlying.toDuration
-  def millis: Long =
-    underlying.toDuration.getMillis
-  // TODO: Should > and > be added as aliases for isAfter and isBefore?
-  //   could be convenient, or just confusing because this isn't Ordered.
+trait StaticPeriod {
+  def days(days: Int) = Period.days(days)
+  def fieldDifference(start: ReadablePartial, end: ReadablePartial) =
+    Period.fieldDifference(start, end)
+  def hours(hours: Int) = Period.hours(hours)
+  def millis(millis: Int) = Period.millis(millis)
+  def minutes(minutes: Int) = Period.minutes(minutes)
+  def months(months: Int) = Period.months(months)
+  def seconds(seconds: Int) = Period.seconds(seconds)
+  def weeks(weeks: Int) = Period.weeks(weeks)
+  def years(years: Int) = Period.years(years)
 }

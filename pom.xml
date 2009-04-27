@@ -4,10 +4,10 @@
   <artifactId>time</artifactId>
   <packaging>jar</packaging>
   <name>Scala-Time</name>
-  <version>0.1-SNAPSHOT</version>
+  <version>${scala.version}-0.1-SNAPSHOT</version>
   <url>http://github.com/jorgeortiz85/scala-javautils</url>
   <inceptionYear>2009</inceptionYear>
-  <description>A simple Scala wrapper for Joda Time</description>
+  <description>A Scala wrapper for Joda Time</description>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -118,4 +118,11 @@
       </plugin>
     </plugins>
   </reporting>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>scala-tools.org</id>
+      <url>dav:http://nexus.scala-tools.org/content/repositories/snapshots</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
