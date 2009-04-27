@@ -21,29 +21,38 @@ import org.joda.time._
 import org.joda.time.field.AbstractReadableInstantFieldProperty
 
 object Implicits extends Implicits
+object BuilderImplicits extends Implicits
 object IntImplicits extends IntImplicits
 object JodaImplicits extends JodaImplicits
 
-trait Implicits extends IntImplicits with JodaImplicits
+trait Implicits extends BuilderImplicits with IntImplicits with JodaImplicits
+
+trait BuilderImplicits {
+  implicit def forcePeriod(builder: DurationBuilder): Period =
+    builder.underlying
+  implicit def forceDuration(builder: DurationBuilder): Duration =
+    builder.underlying.toStandardDuration
+}
 
 trait IntImplicits {
-  implicit def intHelpers(n: Int) = new IntHelpers(n)
+  implicit def RichInt(n: Int) = new org.scala_tools.time.RichInt(n)
+  implicit def RichLong(n: Long) = new org.scala_tools.time.RichLong(n)
 }
 
 trait JodaImplicits {
-  implicit def richAbstractReadableInstantFieldProperty(pty: AbstractReadableInstantFieldProperty) =
+  implicit def RichAbstractReadableInstantFieldProperty(pty: AbstractReadableInstantFieldProperty) =
     new RichAbstractReadableInstantFieldProperty(pty)
-  implicit def richChronology(ch: Chronology) = new RichChronology(ch)
-  implicit def richDateMidnight(dm: DateMidnight) = new RichDateMidnight(dm)
-  implicit def richDateTime(dt: DateTime) = new RichDateTime(dt)
-  implicit def richDateTimeProperty(pty: DateTime.Property) = new RichDateTimeProperty(pty)
-  implicit def richDateTimeZone(zone: DateTimeZone) = new RichDateTimeZone(zone)
-  implicit def richDuration(dur: Duration) = new RichDuration(dur)
-  implicit def richInstant(in: Instant) = new RichInstant(in)
-  implicit def richPeriod(per: Period) = new RichPeriod(per)
-  implicit def richReadableDateTime(dt: ReadableDateTime) = new RichReadableDateTime(dt)
-  implicit def richReadableDuration(dur: ReadableDuration) = new RichReadableDuration(dur)
-  implicit def richReadableInstant(in: ReadableInstant) = new RichReadableInstant(in)
-  implicit def richReadableInterval(in: ReadableInterval) = new RichReadableInterval(in)
-  implicit def richReadablePeriod(per: ReadablePeriod) = new RichReadablePeriod(per)
+  implicit def RichChronology(ch: Chronology) = new RichChronology(ch)
+  implicit def RichDateMidnight(dm: DateMidnight) = new RichDateMidnight(dm)
+  implicit def RichDateTime(dt: DateTime) = new RichDateTime(dt)
+  implicit def RichDateTimeProperty(pty: DateTime.Property) = new RichDateTimeProperty(pty)
+  implicit def RichDateTimeZone(zone: DateTimeZone) = new RichDateTimeZone(zone)
+  implicit def RichDuration(dur: Duration) = new RichDuration(dur)
+  implicit def RichInstant(in: Instant) = new RichInstant(in)
+  implicit def RichPeriod(per: Period) = new RichPeriod(per)
+  implicit def RichReadableDateTime(dt: ReadableDateTime) = new RichReadableDateTime(dt)
+  implicit def RichReadableDuration(dur: ReadableDuration) = new RichReadableDuration(dur)
+  implicit def RichReadableInstant(in: ReadableInstant) = new RichReadableInstant(in)
+  implicit def RichReadableInterval(in: ReadableInterval) = new RichReadableInterval(in)
+  implicit def RichReadablePeriod(per: ReadablePeriod) = new RichReadablePeriod(per)
 }

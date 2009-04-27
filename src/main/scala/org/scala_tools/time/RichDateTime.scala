@@ -25,14 +25,17 @@ class RichDateTime(underlying: DateTime) {
     underlying.minus(duration)
   def -(period: ReadablePeriod): DateTime =
     underlying.minus(period)
+  def -(builder: DurationBuilder): DateTime =
+    underlying.minus(builder.underlying)
   def +(duration: Long): DateTime =
     underlying.plus(duration)
   def +(duration: ReadableDuration): DateTime =
     underlying.plus(duration)
   def +(period: ReadablePeriod): DateTime =
     underlying.plus(period)
+  def +(builder: DurationBuilder): DateTime =
+    underlying.plus(builder.underlying)
   
-  def millis: DateTime.Property = underlying.millisOfSecond
   def second: DateTime.Property = underlying.secondOfMinute
   def minute: DateTime.Property = underlying.minuteOfHour
   def hour: DateTime.Property = underlying.hourOfDay

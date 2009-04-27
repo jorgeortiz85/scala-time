@@ -40,7 +40,14 @@ class RichPeriod(underlying: Period) {
   def +(period: ReadablePeriod): Period =
     underlying.plus(period)
   def ago: DateTime =
-    Instants.now.minus(underlying)
+    StaticDateTime.now.minus(underlying)
+  def later: DateTime =
+    StaticDateTime.now.plus(underlying)
   def from(dt: DateTime): DateTime =
     dt.plus(underlying)
+  def before(dt: DateTime): DateTime =
+    dt.minus(underlying)
+  
+  def standardDuration: Duration =
+    underlying.toStandardDuration
 }
