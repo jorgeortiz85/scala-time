@@ -25,10 +25,14 @@ class RichDateMidnight(underlying: DateMidnight) {
     underlying.minus(duration)
   def -(period: ReadablePeriod): DateMidnight =
     underlying.minus(period)
+  def -(builder: DurationBuilder): DateMidnight =
+    underlying.minus(builder.underlying)
   def +(duration: Long): DateMidnight =
     underlying.plus(duration)
   def +(duration: ReadableDuration): DateMidnight =
     underlying.plus(duration)
   def +(period: ReadablePeriod): DateMidnight =
     underlying.plus(period)
+  def +(builder: DurationBuilder): DateMidnight =
+    underlying.plus(builder.underlying)
 }

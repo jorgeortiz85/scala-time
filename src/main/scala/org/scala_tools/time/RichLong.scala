@@ -18,22 +18,7 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class IntHelpers(n: Int) {
-  def millis: Period = Period.millis(n)
-  def seconds: Period = Period.seconds(n)
-  def minutes: Period = Period.minutes(n)
-  def hours: Period = Period.hours(n)
-  def days: Period = Period.days(n)
-  def weeks: Period = Period.weeks(n)
-  def months: Period = Period.months(n)
-  def years: Period = Period.years(n)
-
-  def milli: Period = Period.millis(n)
-  def second: Period = Period.seconds(n)
-  def minute: Period = Period.minutes(n)
-  def hour: Period = Period.hours(n)
-  def day: Period = Period.days(n)
-  def week: Period = Period.weeks(n)
-  def month: Period = Period.months(n)
-  def year: Period = Period.years(n)
+class RichLong(n: Long) {
+  def toDateTime = new DateTime(n)
+  def toDuration = new Duration(n)
 }
