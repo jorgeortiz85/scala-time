@@ -4,7 +4,7 @@
   <artifactId>time</artifactId>
   <packaging>jar</packaging>
   <name>Scala-Time</name>
-  <version>${scala.version}-0.1</version>
+  <version>${scala.version}-0.2-SNAPSHOT</version>
   <url>http://github.com/jorgeortiz85/scala-javautils</url>
   <inceptionYear>2009</inceptionYear>
   <description>A Scala wrapper for Joda Time</description>
