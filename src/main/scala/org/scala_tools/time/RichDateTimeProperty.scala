@@ -21,4 +21,14 @@ import org.joda.time._
 class RichDateTimeProperty(underlying: DateTime.Property) {
   def dateTime: DateTime =
     underlying.getDateTime
+  def roundFloor: DateTime =
+    underlying.roundFloorCopy
+  def roundCeiling: DateTime =
+    underlying.roundCeilingCopy
+  def roundDown: DateTime =
+    underlying.roundFloorCopy
+  def roundUp: DateTime =
+    underlying.roundCeilingCopy
+  def round: DateTime =
+    underlying.roundHalfEvenCopy
 }

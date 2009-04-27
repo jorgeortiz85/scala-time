@@ -17,28 +17,12 @@
 package org.scala_tools.time
 
 import org.joda.time._
-import org.scala_tools.time.Implicits._
 
-object Instants extends Instants
+object StaticDuration extends StaticDuration
 
-trait Instants {  
-  def now        = new DateTime
-
-  def nextSecond = now + 1.second
-  def nextMinute = now + 1.minute
-  def nextHour   = now + 1.hour
-  def nextDay    = now + 1.day
-  def tomorrow   = now + 1.day
-  def nextWeek   = now + 1.week
-  def nextMonth  = now + 1.month
-  def nextYear   = now + 1.year
-
-  def lastSecond = now - 1.second
-  def lastMinute = now - 1.minute
-  def lastHour   = now - 1.hour
-  def lastDay    = now - 1.day
-  def yesterday  = now - 1.day
-  def lastWeek   = now - 1.week
-  def lastMonth  = now - 1.month
-  def lastYear   = now - 1.year
+trait StaticDuration {
+  def standardDays(days: Long) = Duration.standardDays(days)
+  def standardHours(hours: Long) = Duration.standardHours(hours)
+  def standardMinutes(minutes: Long) = Duration.standardMinutes(minutes)
+  def standardSeconds(seconds: Long) = Duration.standardSeconds(seconds)
 }

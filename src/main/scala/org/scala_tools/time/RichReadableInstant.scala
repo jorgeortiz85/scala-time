@@ -28,6 +28,9 @@ class RichReadableInstant[T <: ReadableInstant](underlying: T) extends Ordered[T
   override def compare(that: T): Int =
     underlying.compareTo(that)
   
+  def to(other: ReadableInstant): Interval =
+    new Interval(underlying, other)
+
   def instant: Instant =
     underlying.toInstant
 }
