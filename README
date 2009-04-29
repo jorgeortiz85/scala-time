@@ -6,7 +6,10 @@ USAGE:
 
   DateTime.now
 	// returns org.joda.time.DateTime = 2009-04-27T13:25:42.659-07:00
-	
+
+	DateTime.now.hour(2).minute(45).second(10)
+	// returns org.joda.time.DateTime = 2009-04-27T02:45:10.313-07:00
+
   DateTime.now + 2.months
   // returns org.joda.time.DateTime = 2009-06-27T13:25:59.195-07:00
 
