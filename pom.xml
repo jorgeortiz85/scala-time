@@ -15,6 +15,14 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+  <developers>
+    <developer>
+      <id>jorge.ortiz</id>
+      <name>Jorge Ortiz</name>
+      <timezone>-8</timezone>
+      <email>jorge.ortiz@gmail.com</email>
+    </developer>
+  </developers>
   <scm>
     <connection>scm:git:git://github.com/jorgeortiz85/scala-time.git</connection>
     <developerConnection>scm:git:git@github.com:jorgeortiz85/scala-time.git</developerConnection>

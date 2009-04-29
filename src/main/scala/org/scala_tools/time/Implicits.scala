@@ -18,6 +18,7 @@ package org.scala_tools.time
 
 import java.util.Locale
 import org.joda.time._
+import org.joda.time.format.DateTimeFormatter
 import org.joda.time.field.AbstractReadableInstantFieldProperty
 
 object Implicits extends Implicits
@@ -45,6 +46,7 @@ trait JodaImplicits {
   implicit def RichChronology(ch: Chronology) = new RichChronology(ch)
   implicit def RichDateMidnight(dm: DateMidnight) = new RichDateMidnight(dm)
   implicit def RichDateTime(dt: DateTime) = new RichDateTime(dt)
+  implicit def RichDateTimeFormatter(fmt: DateTimeFormatter) = new RichDateTimeFormatter(fmt)
   implicit def RichDateTimeProperty(pty: DateTime.Property) = new RichDateTimeProperty(pty)
   implicit def RichDateTimeZone(zone: DateTimeZone) = new RichDateTimeZone(zone)
   implicit def RichDuration(dur: Duration) = new RichDuration(dur)
