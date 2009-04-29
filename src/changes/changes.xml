@@ -16,6 +16,8 @@
     see http://maven.apache.org/plugins/maven-changes-plugin/usage.html for full guide
   -->
     <release version="0.2-SNAPSHOT" date="" description="">
+      <action dev="Jorge Ortiz" type="fix">Ordered[T] for subclasses of ReadableInstant and ReadableDuration</action>
+      <action dev="Jorge Ortiz" type="add">Explicit return types for all implicits</action>
       <action dev="Jorge Ortiz" type="add">Shorter methods for DateTimeFormatter, and a new parseOption method</action>
       <action dev="Jorge Ortiz" type="add">"apply" method is now an alias for setCopy in DateTime.Property</action>
       <action dev="Jorge Ortiz" type="add">Shortened with* (withHour, withMinute, etc) updaters to DateTime</action>
