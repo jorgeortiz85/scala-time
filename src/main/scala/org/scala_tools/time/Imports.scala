@@ -23,18 +23,20 @@ object StaticForwarderImports extends StaticForwarderImports
 trait Imports extends TypeImports with StaticForwarderImports with Implicits
 
 trait TypeImports {
-  type DateTime     = org.joda.time.DateTime
-  type Interval     = org.joda.time.Interval
-  type Duration     = org.joda.time.Duration
-  type Period       = org.joda.time.Period
-  type DateTimeZone = org.joda.time.DateTimeZone
-  type Chronology   = org.joda.time.Chronology
+  type DateTime       = org.joda.time.DateTime
+  type Interval       = org.joda.time.Interval
+  type Duration       = org.joda.time.Duration
+  type Period         = org.joda.time.Period
+  type DateTimeZone   = org.joda.time.DateTimeZone
+  type Chronology     = org.joda.time.Chronology
+  type DateTimeFormat = org.joda.time.format.DateTimeFormat
 }
 
 trait StaticForwarderImports {
-  val DateTime     = org.scala_tools.time.StaticDateTime
-  val Interval     = org.scala_tools.time.StaticInterval
-  val Duration     = org.scala_tools.time.StaticDuration
-  val Period       = org.scala_tools.time.StaticPeriod
-  val DateTimeZone = org.scala_tools.time.StaticDateTimeZone
+  val DateTime       = org.scala_tools.time.StaticDateTime
+  val Interval       = org.scala_tools.time.StaticInterval
+  val Duration       = org.scala_tools.time.StaticDuration
+  val Period         = org.scala_tools.time.StaticPeriod
+  val DateTimeZone   = org.scala_tools.time.StaticDateTimeZone
+  val DateTimeFormat = org.scala_tools.time.StaticDateTimeFormat
 }
