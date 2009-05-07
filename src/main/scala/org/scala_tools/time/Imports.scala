@@ -1,5 +1,6 @@
 /**
  * Copyright 2009 Jorge Ortiz
+ * Copyright 2009 Barry Kaplan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +25,8 @@ trait Imports extends TypeImports with StaticForwarderImports with Implicits
 
 trait TypeImports {
   type DateTime       = org.joda.time.DateTime
+  type LocalDate      = org.joda.time.LocalDate
+  type LocalTime      = org.joda.time.LocalTime
   type Interval       = org.joda.time.Interval
   type Duration       = org.joda.time.Duration
   type Period         = org.joda.time.Period
@@ -34,6 +37,8 @@ trait TypeImports {
 
 trait StaticForwarderImports {
   val DateTime       = org.scala_tools.time.StaticDateTime
+  val LocalDate      = org.scala_tools.time.StaticLocalDate
+  val LocalTime      = org.scala_tools.time.StaticLocalTime
   val Interval       = org.scala_tools.time.StaticInterval
   val Duration       = org.scala_tools.time.StaticDuration
   val Period         = org.scala_tools.time.StaticPeriod

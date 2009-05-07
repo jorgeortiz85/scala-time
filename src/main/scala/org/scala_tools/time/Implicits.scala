@@ -1,5 +1,6 @@
 /**
  * Copyright 2009 Jorge Ortiz
+ * Copyright 2009 Barry Kaplan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +46,8 @@ trait JodaImplicits {
     new RichAbstractReadableInstantFieldProperty(pty)
   implicit def RichChronology(ch: Chronology): RichChronology = new RichChronology(ch)
   implicit def RichDateMidnight(dm: DateMidnight): RichDateMidnight = new RichDateMidnight(dm)
+  implicit def RichLocalDate(ld: LocalDate): RichLocalDate = new RichLocalDate(ld)
+  implicit def RichLocalTime(lt: LocalTime): RichLocalTime = new RichLocalTime(lt)
   implicit def RichDateTime(dt: DateTime): RichDateTime = new RichDateTime(dt)
   implicit def RichDateTimeFormatter(fmt: DateTimeFormatter): RichDateTimeFormatter = new RichDateTimeFormatter(fmt)
   implicit def RichDateTimeProperty(pty: DateTime.Property): RichDateTimeProperty = new RichDateTimeProperty(pty)
