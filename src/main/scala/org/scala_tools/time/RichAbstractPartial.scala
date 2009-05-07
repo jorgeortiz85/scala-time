@@ -17,20 +17,13 @@
 package org.scala_tools.time
 
 import org.joda.time._
+import org.joda.time.base.AbstractPartial
 
-class RichReadableInstant(underlying: ReadableInstant) extends Ordered[ReadableInstant] {
-  def chronology: Chronology =
-    underlying.getChronology
-  def millis: Long =
-    underlying.getMillis
-  def zone: DateTimeZone =
-    underlying.getZone
-  override def compare(that: ReadableInstant): Int =
+class RichAbstractPartial(underlying: AbstractPartial) extends Ordered[AbstractPartial] {
+  def fields = underlying.getFields
+  def fieldTypes = underlying.getFieldTypes
+  def values = underlying.getValues
+
+  override def compare(that: AbstractPartial): Int =
     underlying.compareTo(that)
-  
-  def to(other: ReadableInstant): Interval =
-    new Interval(underlying, other)
-
-  def instant: Instant =
-    underlying.toInstant
 }
