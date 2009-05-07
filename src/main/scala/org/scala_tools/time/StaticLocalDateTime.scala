@@ -1,6 +1,5 @@
 /**
  * Copyright 2009 Jorge Ortiz
- * Copyright 2009 Barry Kaplan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,30 +20,33 @@ import java.util.{Calendar, Date}
 import org.joda.time._
 import org.scala_tools.time.Implicits._
 
-object StaticLocalTime extends StaticLocalTime
+object StaticLocalDateTime extends StaticLocalDateTime
 
-trait StaticLocalTime {
-  type Property = LocalTime.Property
-  
-  final val MIDNIGHT = LocalTime.MIDNIGHT
-  final val Midnight = LocalTime.MIDNIGHT
+trait StaticLocalDateTime {
+  type Property = LocalDateTime.Property
   
   def fromCalendarFields(calendar: Calendar) =
-    LocalTime.fromCalendarFields(calendar)
+    LocalDateTime.fromCalendarFields(calendar)
   def fromDateFields(date: Date) =
-    LocalTime.fromDateFields(date)
-  def fromMillisOfDay(millis: Long) =
-    LocalTime.fromMillisOfDay(millis)
-  def fromMillisOfDay(millis: Long, chrono: Chronology) =
-    LocalTime.fromMillisOfDay(millis, chrono)
+    LocalDateTime.fromDateFields(date)
 
-  def now        = new LocalTime
+  def now        = new LocalDateTime
 
   def nextSecond = now + 1.second
   def nextMinute = now + 1.minute
   def nextHour   = now + 1.hour
+  def nextDay    = now + 1.day
+  def tomorrow   = now + 1.day
+  def nextWeek   = now + 1.week
+  def nextMonth  = now + 1.month
+  def nextYear   = now + 1.year
 
   def lastSecond = now - 1.second
   def lastMinute = now - 1.minute
   def lastHour   = now - 1.hour
+  def lastDay    = now - 1.day
+  def yesterday  = now - 1.day
+  def lastWeek   = now - 1.week
+  def lastMonth  = now - 1.month
+  def lastYear   = now - 1.year
 }

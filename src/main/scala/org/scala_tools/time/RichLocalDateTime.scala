@@ -1,6 +1,5 @@
 /**
  * Copyright 2009 Jorge Ortiz
- * Copyright 2009 Barry Kaplan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,29 +18,37 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichLocalDate(underlying: LocalDate) {
-  def -(period: ReadablePeriod): LocalDate =
+class RichLocalDateTime(underlying: LocalDateTime) {
+  def -(duration: ReadableDuration): LocalDateTime =
+    underlying.minus(duration)
+  def -(period: ReadablePeriod): LocalDateTime =
     underlying.minus(period)
-  def -(builder: DurationBuilder): LocalDate =
+  def -(builder: DurationBuilder): LocalDateTime =
     underlying.minus(builder.underlying)
-  def +(period: ReadablePeriod): LocalDate =
+  def +(duration: ReadableDuration): LocalDateTime =
+    underlying.plus(duration)
+  def +(period: ReadablePeriod): LocalDateTime =
     underlying.plus(period)
-  def +(builder: DurationBuilder): LocalDate =
+  def +(builder: DurationBuilder): LocalDateTime =
     underlying.plus(builder.underlying)
 
-  def day: LocalDate.Property = underlying.dayOfMonth
-  def week: LocalDate.Property = underlying.weekOfWeekyear
-  def month: LocalDate.Property = underlying.monthOfYear
-  def year: LocalDate.Property = underlying.year
-  def century: LocalDate.Property = underlying.centuryOfEra
-  def era: LocalDate.Property = underlying.era
+  def second: LocalDateTime.Property = underlying.secondOfMinute
+  def minute: LocalDateTime.Property = underlying.minuteOfHour
+  def hour: LocalDateTime.Property = underlying.hourOfDay
+  def day: LocalDateTime.Property = underlying.dayOfMonth
+  def week: LocalDateTime.Property = underlying.weekOfWeekyear
+  def month: LocalDateTime.Property = underlying.monthOfYear
+  def year: LocalDateTime.Property = underlying.year
+  def century: LocalDateTime.Property = underlying.centuryOfEra
+  def era: LocalDateTime.Property = underlying.era
 
+  def withSecond(second: Int) = underlying.withSecondOfMinute(second)
+  def withMinute(minute: Int) = underlying.withMinuteOfHour(minute)
+  def withHour(hour: Int) = underlying.withHourOfDay(hour)
   def withDay(day: Int) = underlying.withDayOfMonth(day)
   def withWeek(week: Int) = underlying.withWeekOfWeekyear(week)
   def withMonth(month: Int) = underlying.withMonthOfYear(month)
   def withYear(year: Int) = underlying.withYear(year)
   def withCentury(century: Int) = underlying.withCenturyOfEra(century)
   def withEra(era: Int) = underlying.withEra(era)
-  
-  def interval = underlying.toInterval
 }

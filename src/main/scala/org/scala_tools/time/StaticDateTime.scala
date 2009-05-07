@@ -22,6 +22,8 @@ import org.scala_tools.time.Implicits._
 object StaticDateTime extends StaticDateTime
 
 trait StaticDateTime {
+  type Property = DateTime.Property
+
   def now        = new DateTime
 
   def nextSecond = now + 1.second

@@ -24,24 +24,28 @@ object StaticForwarderImports extends StaticForwarderImports
 trait Imports extends TypeImports with StaticForwarderImports with Implicits
 
 trait TypeImports {
-  type DateTime       = org.joda.time.DateTime
-  type LocalDate      = org.joda.time.LocalDate
-  type LocalTime      = org.joda.time.LocalTime
-  type Interval       = org.joda.time.Interval
-  type Duration       = org.joda.time.Duration
-  type Period         = org.joda.time.Period
-  type DateTimeZone   = org.joda.time.DateTimeZone
   type Chronology     = org.joda.time.Chronology
+  type DateTime       = org.joda.time.DateTime
   type DateTimeFormat = org.joda.time.format.DateTimeFormat
+  type DateTimeZone   = org.joda.time.DateTimeZone
+  type Duration       = org.joda.time.Duration
+  type Interval       = org.joda.time.Interval
+  type LocalDate      = org.joda.time.LocalDate
+  type LocalDateTime  = org.joda.time.LocalDateTime
+  type LocalTime      = org.joda.time.LocalTime
+  type Period         = org.joda.time.Period
+  type Partial        = org.joda.time.Partial
 }
 
 trait StaticForwarderImports {
   val DateTime       = org.scala_tools.time.StaticDateTime
-  val LocalDate      = org.scala_tools.time.StaticLocalDate
-  val LocalTime      = org.scala_tools.time.StaticLocalTime
-  val Interval       = org.scala_tools.time.StaticInterval
-  val Duration       = org.scala_tools.time.StaticDuration
-  val Period         = org.scala_tools.time.StaticPeriod
-  val DateTimeZone   = org.scala_tools.time.StaticDateTimeZone
   val DateTimeFormat = org.scala_tools.time.StaticDateTimeFormat
+  val DateTimeZone   = org.scala_tools.time.StaticDateTimeZone
+  val Duration       = org.scala_tools.time.StaticDuration
+  val Interval       = org.scala_tools.time.StaticInterval
+  val LocalDate      = org.scala_tools.time.StaticLocalDate
+  val LocalDateTime  = org.scala_tools.time.StaticLocalDateTime
+  val LocalTime      = org.scala_tools.time.StaticLocalTime
+  val Period         = org.scala_tools.time.StaticPeriod
+  val Partial        = org.scala_tools.time.StaticPartial
 }
