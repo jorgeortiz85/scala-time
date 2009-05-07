@@ -19,22 +19,22 @@ package org.scala_tools.time
 import java.util.Locale
 import org.joda.time._
 
-class RichDateTimeProperty(underlying: DateTime.Property) {
-  def dateTime: DateTime =
-    underlying.getDateTime
-  def roundFloor: DateTime =
+class RichLocalTimeProperty(underlying: LocalTime.Property) {
+  def localTime: LocalTime =
+    underlying.getLocalTime
+  def roundFloor: LocalTime =
     underlying.roundFloorCopy
-  def roundCeiling: DateTime =
+  def roundCeiling: LocalTime =
     underlying.roundCeilingCopy
-  def roundDown: DateTime =
+  def roundDown: LocalTime =
     underlying.roundFloorCopy
-  def roundUp: DateTime =
+  def roundUp: LocalTime =
     underlying.roundCeilingCopy
-  def round: DateTime =
+  def round: LocalTime =
     underlying.roundHalfEvenCopy
 
-  def apply(value: Int): DateTime = underlying.setCopy(value)
-  def apply(text: String): DateTime = underlying.setCopy(text)
-  def apply(text: String, locale: Locale): DateTime =
+  def apply(value: Int): LocalTime = underlying.setCopy(value)
+  def apply(text: String): LocalTime = underlying.setCopy(text)
+  def apply(text: String, locale: Locale): LocalTime =
     underlying.setCopy(text, locale)
 }

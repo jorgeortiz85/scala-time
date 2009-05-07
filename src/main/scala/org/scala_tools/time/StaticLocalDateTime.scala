@@ -16,15 +16,21 @@
  **/
 package org.scala_tools.time
 
+import java.util.{Calendar, Date}
 import org.joda.time._
 import org.scala_tools.time.Implicits._
 
-object StaticDateTime extends StaticDateTime
+object StaticLocalDateTime extends StaticLocalDateTime
 
-trait StaticDateTime {
-  type Property = DateTime.Property
+trait StaticLocalDateTime {
+  type Property = LocalDateTime.Property
+  
+  def fromCalendarFields(calendar: Calendar) =
+    LocalDateTime.fromCalendarFields(calendar)
+  def fromDateFields(date: Date) =
+    LocalDateTime.fromDateFields(date)
 
-  def now        = new DateTime
+  def now        = new LocalDateTime
 
   def nextSecond = now + 1.second
   def nextMinute = now + 1.minute

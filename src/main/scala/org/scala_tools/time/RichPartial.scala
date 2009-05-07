@@ -18,19 +18,15 @@ package org.scala_tools.time
 
 import org.joda.time._
 
-class RichReadableInstant(underlying: ReadableInstant) extends Ordered[ReadableInstant] {
-  def chronology: Chronology =
-    underlying.getChronology
-  def millis: Long =
-    underlying.getMillis
-  def zone: DateTimeZone =
-    underlying.getZone
-  override def compare(that: ReadableInstant): Int =
-    underlying.compareTo(that)
+class RichPartial(underlying: Partial) {
+  def formatter = underlying.getFormatter
   
-  def to(other: ReadableInstant): Interval =
-    new Interval(underlying, other)
-
-  def instant: Instant =
-    underlying.toInstant
+  def -(period: ReadablePeriod): Partial =
+    underlying.minus(period)
+  def -(builder: DurationBuilder): Partial =
+    underlying.minus(builder.underlying)
+  def +(period: ReadablePeriod): Partial =
+    underlying.plus(period)
+  def +(builder: DurationBuilder): Partial =
+    underlying.plus(builder.underlying)
 }
