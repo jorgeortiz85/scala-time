@@ -16,21 +16,15 @@
  **/
 package org.scala_tools.time
 
+import java.util.Locale
 import org.joda.time._
 
-class RichReadableInstant(underlying: ReadableInstant) extends Ordered[ReadableInstant] {
-  def chronology: Chronology =
-    underlying.getChronology
-  def millis: Long =
-    underlying.getMillis
-  def zone: DateTimeZone =
-    underlying.getZone
-  override def compare(that: ReadableInstant): Int =
-    underlying.compareTo(that)
-  
-  def to(other: ReadableInstant): Interval =
-    new Interval(underlying, other)
+class RichPartialProperty(underlying: Partial.Property) {
+  def partial: Partial =
+    underlying.getPartial
 
-  def instant: Instant =
-    underlying.toInstant
+  def apply(value: Int): Partial = underlying.setCopy(value)
+  def apply(text: String): Partial = underlying.setCopy(text)
+  def apply(text: String, locale: Locale): Partial =
+    underlying.setCopy(text, locale)
 }
