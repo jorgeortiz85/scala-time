@@ -1,0 +1,1 @@
+scala-time is a convenient and lightweight Scala wrapper for the Joda Time libraries.
