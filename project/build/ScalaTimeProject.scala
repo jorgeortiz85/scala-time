@@ -8,8 +8,8 @@ class ScalaTimeProject(info: ProjectInfo) extends DefaultProject(info) with post
 
   // Publishing
   override def managedStyle = ManagedStyle.Maven
-  val publishTo = "Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/snapshots/"
+  val publishTo = "Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/releases/"
   Credentials(Path.userHome / ".ivy2" / ".credentials", log)
-  // override def publishAction = super.publishAction && publishCurrentNotes
-  // override def extraTags = "scalaj" :: super.extraTags
+  override def publishAction = super.publishAction && publishCurrentNotes
+  override def extraTags = "scalaj" :: super.extraTags
 }
