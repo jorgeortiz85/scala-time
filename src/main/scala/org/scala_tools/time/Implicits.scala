@@ -28,7 +28,7 @@ object BuilderImplicits extends Implicits
 object IntImplicits extends IntImplicits
 object JodaImplicits extends JodaImplicits
 
-trait Implicits extends BuilderImplicits with IntImplicits with JodaImplicits
+trait Implicits extends BuilderImplicits with IntImplicits with DateImplicits with JodaImplicits
 
 trait BuilderImplicits {
   implicit def forcePeriod(builder: DurationBuilder): Period =
