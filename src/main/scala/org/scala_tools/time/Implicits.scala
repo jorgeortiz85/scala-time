@@ -17,7 +17,7 @@
  **/
 package org.scala_tools.time
 
-import java.util.Locale
+import java.util.{Date, Locale}
 import org.joda.time._
 import org.joda.time.base.{AbstractDateTime, AbstractInstant, AbstractPartial}
 import org.joda.time.format.DateTimeFormatter
@@ -40,6 +40,10 @@ trait BuilderImplicits {
 trait IntImplicits {
   implicit def RichInt(n: Int): RichInt = new org.scala_tools.time.RichInt(n)
   implicit def RichLong(n: Long): RichLong = new org.scala_tools.time.RichLong(n)
+}
+
+trait DateImplicits {
+  implicit def RichDate(d: Date): RichDate = new org.scala_tools.time.RichDate(d)
 }
 
 trait JodaImplicits {
