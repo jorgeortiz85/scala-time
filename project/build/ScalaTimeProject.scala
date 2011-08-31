@@ -15,10 +15,8 @@ class ScalaTimeProject(info: ProjectInfo) extends DefaultProject(info) with post
       "Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/snapshots/"
     else
       "Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/releases/"
-  override def publishAction = 
-    if (snapshot)
-      super.publishAction
-    else
-      super.publishAction && publishCurrentNotes
+
+  // 
+  // `publishCurrentNotes` will post to implicit.ly
   override def extraTags = "scalaj" :: super.extraTags
 }
