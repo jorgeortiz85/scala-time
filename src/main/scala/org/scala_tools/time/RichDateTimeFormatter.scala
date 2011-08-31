@@ -22,7 +22,7 @@ import org.joda.time.format.{DateTimeFormatter, DateTimeParser,
   DateTimePrinter}
 
 class RichDateTimeFormatter(underlying: DateTimeFormatter) {
-  def chronology: Chronology = underlying.getChronolgy
+  def chronology: Chronology = underlying.getChronology
   def locale: Locale = underlying.getLocale
   def parser: DateTimeParser = underlying.getParser
   def pivotYear: Int = underlying.getPivotYear.intValue
