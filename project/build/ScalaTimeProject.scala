@@ -15,14 +15,21 @@ with posterous.Publish with MMXPublishing {
   override def compileOptions = Seq(Deprecation, Unchecked)
 
   // Dependencies
-  val jodaTime = "joda-time" % "joda-time" % "1.6"
+  val jodaTime = "joda-time" % "joda-time" % "1.6.2"
 
   /*
   // Publishing
   override def managedStyle = ManagedStyle.Maven
-  val publishTo = "Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/releases/"
+  val snapshot = version.toString.endsWith("-SNAPSHOT")
   Credentials(Path.userHome / ".ivy2" / ".credentials", log)
-  override def publishAction = super.publishAction && publishCurrentNotes
+  val publishTo = 
+    if (snapshot)
+      "Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/snapshots/"
+    else
+      "Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/releases/"
+
+  // 
+  // `publishCurrentNotes` will post to implicit.ly
   override def extraTags = "scalaj" :: super.extraTags
   */
 }

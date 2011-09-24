@@ -1,0 +1,4 @@
+0.4 release:
+
+* Upgrade to Joda-Time 1.6.2
+* Binary compatibility with Scala 2.9.0 and 2.9.0-1

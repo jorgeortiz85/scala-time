@@ -1,0 +1,4 @@
+0.5 release:
+
+* Adds toLocalDateTime, toLocalDate, and toLocalTime implicits to java.util.Date (thanks to Alexander Azarov!)
+* Cross compiled against Scala 2.9.1
