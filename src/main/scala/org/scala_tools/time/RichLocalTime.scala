@@ -28,10 +28,12 @@ class RichLocalTime(underlying: LocalTime) {
   def +(builder: DurationBuilder): LocalTime =
     underlying.plus(builder.underlying)
 
+  def milli: LocalTime.Property = underlying.millisOfSecond
   def second: LocalTime.Property = underlying.secondOfMinute
   def minute: LocalTime.Property = underlying.minuteOfHour
   def hour: LocalTime.Property = underlying.hourOfDay
 
+  def withMilli(milli: Int) = underlying.withMillisOfSecond(milli)
   def withSecond(second: Int) = underlying.withSecondOfMinute(second)
   def withMinute(minute: Int) = underlying.withMinuteOfHour(minute)
   def withHour(hour: Int) = underlying.withHourOfDay(hour)
