@@ -36,6 +36,7 @@ class RichDateTime(underlying: DateTime) {
   def +(builder: DurationBuilder): DateTime =
     underlying.plus(builder.underlying)
   
+  def milli: DateTime.Property = underlying.millisOfSecond
   def second: DateTime.Property = underlying.secondOfMinute
   def minute: DateTime.Property = underlying.minuteOfHour
   def hour: DateTime.Property = underlying.hourOfDay
@@ -46,6 +47,7 @@ class RichDateTime(underlying: DateTime) {
   def century: DateTime.Property = underlying.centuryOfEra
   def era: DateTime.Property = underlying.era
   
+  def withMilli(milli: Int) = underlying.withMillisOfSecond(milli)
   def withSecond(second: Int) = underlying.withSecondOfMinute(second)
   def withMinute(minute: Int) = underlying.withMinuteOfHour(minute)
   def withHour(hour: Int) = underlying.withHourOfDay(hour)
