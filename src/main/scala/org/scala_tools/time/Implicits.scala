@@ -26,9 +26,10 @@ import org.joda.time.field.AbstractReadableInstantFieldProperty
 object Implicits extends Implicits
 object BuilderImplicits extends Implicits
 object IntImplicits extends IntImplicits
+object StringImplicits extends StringImplicits
 object JodaImplicits extends JodaImplicits
 
-trait Implicits extends BuilderImplicits with IntImplicits with DateImplicits with JodaImplicits
+trait Implicits extends BuilderImplicits with IntImplicits with StringImplicits with DateImplicits with JodaImplicits
 
 trait BuilderImplicits {
   implicit def forcePeriod(builder: DurationBuilder): Period =
@@ -40,6 +41,10 @@ trait BuilderImplicits {
 trait IntImplicits {
   implicit def RichInt(n: Int): RichInt = new org.scala_tools.time.RichInt(n)
   implicit def RichLong(n: Long): RichLong = new org.scala_tools.time.RichLong(n)
+}
+
+trait StringImplicits {
+  implicit def RichString(s: String): RichString = new org.scala_tools.time.RichString(s)
 }
 
 trait DateImplicits {
