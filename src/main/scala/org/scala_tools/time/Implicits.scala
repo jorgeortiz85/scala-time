@@ -75,4 +75,8 @@ trait JodaImplicits {
   implicit def RichReadableInterval(in: ReadableInterval): RichReadableInterval = new RichReadableInterval(in)
   implicit def RichReadablePartial(rp: ReadablePartial): RichReadablePartial = new RichReadablePartial(rp)
   implicit def RichReadablePeriod(per: ReadablePeriod): RichReadablePeriod = new RichReadablePeriod(per)
+  implicit def RichTuple3(tuple3: Tuple3[Int, Int, Int]) = new RichTuple3(tuple3)
+  implicit def RichTuple7(tuple7: Tuple7[Int, Int, Int, Int, Int, Int, Int]) = new RichTuple7(tuple7)
+  implicit def RichTuple8WithStringTZ(tuple8: Tuple8[Int, Int, Int, Int, Int, Int, Int, String]) = new RichTuple8WithStringTZ(tuple8)
+  implicit def RichTuple8WithTZ(tuple8: Tuple8[Int, Int, Int, Int, Int, Int, Int, DateTimeZone]) = new RichTuple8WithTZ(tuple8)
 }

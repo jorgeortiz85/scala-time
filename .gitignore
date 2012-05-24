@@ -3,3 +3,6 @@ target/
 lib_managed/
 boot/
 src_managed/
+*.iml
+*.ipr
+*.iws
