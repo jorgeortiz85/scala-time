@@ -29,6 +29,28 @@ libraryDependencies ++= Seq(
   "org.joda" % "joda-convert" % "1.2" % "compile"
 )
 
+pomExtra := (
+  <url>https://github.com/jorgeortiz85/scala-time</url>
+  <licenses>
+    <license>
+      <name>Apache</name>
+      <url>http://www.opensource.org/licenses/Apache-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>git@github.com:jorgeortiz85/scala-time.git</url>
+    <connection>scm:git:git@github.com:jorgeortiz85/scala-time.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>jorgeortiz85</id>
+      <name>Jorge Ortiz</name>
+      <url>https://github.com/jorgeortiz85</url>
+    </developer>
+  </developers>
+)
+
 publishTo <<= version { v =>
   val nexus = "http://oss.sonatype.org/"
   if (v.endsWith("-SNAPSHOT"))
