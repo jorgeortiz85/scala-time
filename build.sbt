@@ -2,7 +2,7 @@ organization := "org.scalaj"
 
 name := "scalaj-time"
 
-version := "0.6"
+version := "0.7-SNAPSHOT"
 
 publishMavenStyle := true
 
