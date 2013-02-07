@@ -6,16 +6,7 @@ version := "0.7-SNAPSHOT"
 
 publishMavenStyle := true
 
-crossScalaVersions := Seq("2.8.0", "2.8.1", "2.9.0", "2.9.0-1", "2.9.1", "2.9.2", "2.10.0-M7")
-
-crossVersion := CrossVersion.full
-
-scalaBinaryVersion <<= scalaBinaryVersion { v =>
-  if (v.startsWith("2.10"))
-    "2.10.0-M7"
-  else
-    v
-}
+crossScalaVersions := Seq("2.8.0", "2.8.1", "2.9.0", "2.9.0-1", "2.9.1", "2.9.2", "2.10.0")
 
 scalacOptions <++= scalaVersion map { v =>
   if (v.startsWith("2.10"))
