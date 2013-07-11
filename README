@@ -46,7 +46,7 @@ INSTALLATION:
 
 Add the following to your sbt build:
 
-  libraryDependencies += "org.scalaj" %% "scalaj-time" % "0.6"
+  libraryDependencies += "org.scalaj" %% "scalaj-time" % "0.7"
 
 MOTIVATION:
 
