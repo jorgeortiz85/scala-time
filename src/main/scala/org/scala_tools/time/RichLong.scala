@@ -21,4 +21,9 @@ import org.joda.time._
 class RichLong(n: Long) {
   def toDateTime = new DateTime(n)
   def toDuration = new Duration(n)
+
+  // For consistency with RichInt. Millis are the only unit
+  // that long won't overflow.
+  def millis = DurationBuilder(new Period(n))
+  def milli  = DurationBuilder(new Period(n))
 }
