@@ -6,7 +6,7 @@ version := "0.8-SNAPSHOT"
 
 publishMavenStyle := true
 
-crossScalaVersions := Seq("2.9.0", "2.9.0-1", "2.9.1", "2.9.1-1", "2.9.2", "2.10.2")
+crossScalaVersions := Seq("2.9.0", "2.9.0-1", "2.9.1", "2.9.1-1", "2.9.2", "2.10.4")
 
 crossVersion := CrossVersion.full
 
@@ -18,8 +18,8 @@ scalacOptions <++= scalaVersion map { v =>
 }
 
 libraryDependencies ++= Seq(
-  "joda-time" % "joda-time" % "2.2",
-  "org.joda" % "joda-convert" % "1.2" % "compile"
+  "joda-time" % "joda-time" % "2.3",
+  "org.joda" % "joda-convert" % "1.6" % "compile"
 )
 
 pomExtra := (

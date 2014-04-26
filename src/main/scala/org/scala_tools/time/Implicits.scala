@@ -53,7 +53,7 @@ trait JodaImplicits {
   implicit def RichAbstractReadableInstantFieldProperty(pty: AbstractReadableInstantFieldProperty): RichAbstractReadableInstantFieldProperty =
     new RichAbstractReadableInstantFieldProperty(pty)
   implicit def RichChronology(ch: Chronology): RichChronology = new RichChronology(ch)
-  implicit def RichDateMidnight(dm: DateMidnight): RichDateMidnight = new RichDateMidnight(dm)
+  implicit def RichDateMidnight(dm: JodaTimeDateMidnight): RichDateMidnight = new RichDateMidnight(dm)
   implicit def RichDateTime(dt: DateTime): RichDateTime = new RichDateTime(dt)
   implicit def RichDateTimeFormatter(fmt: DateTimeFormatter): RichDateTimeFormatter = new RichDateTimeFormatter(fmt)
   implicit def RichDateTimeProperty(pty: DateTime.Property): RichDateTimeProperty = new RichDateTimeProperty(pty)
