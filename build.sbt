@@ -6,12 +6,14 @@ version := "0.8-SNAPSHOT"
 
 publishMavenStyle := true
 
-crossScalaVersions := Seq("2.9.0", "2.9.0-1", "2.9.1", "2.9.1-1", "2.9.2", "2.10.4")
+crossScalaVersions := Seq("2.9.0", "2.9.0-1", "2.9.1", "2.9.1-1", "2.9.2", "2.10.4", "2.11.0")
 
 crossVersion := CrossVersion.full
 
+scalaVersion := "2.11.0"
+
 scalacOptions <++= scalaVersion map { v =>
-  if (v.startsWith("2.10"))
+  if (v.startsWith("2.1"))
     Seq("-unchecked", "-deprecation", "-feature", "-language:implicitConversions")
   else
     Seq("-unchecked", "-deprecation")
