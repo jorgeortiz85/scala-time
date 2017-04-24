@@ -32,6 +32,7 @@ class RichLocalDateTime(underlying: LocalDateTime) {
   def +(builder: DurationBuilder): LocalDateTime =
     underlying.plus(builder.underlying)
 
+  def milli: LocalDateTime.Property = underlying.millisOfSecond
   def second: LocalDateTime.Property = underlying.secondOfMinute
   def minute: LocalDateTime.Property = underlying.minuteOfHour
   def hour: LocalDateTime.Property = underlying.hourOfDay
@@ -42,6 +43,7 @@ class RichLocalDateTime(underlying: LocalDateTime) {
   def century: LocalDateTime.Property = underlying.centuryOfEra
   def era: LocalDateTime.Property = underlying.era
 
+  def withMilli(milli: Int) = underlying.withMillisOfSecond(milli)
   def withSecond(second: Int) = underlying.withSecondOfMinute(second)
   def withMinute(minute: Int) = underlying.withMinuteOfHour(minute)
   def withHour(hour: Int) = underlying.withHourOfDay(hour)
